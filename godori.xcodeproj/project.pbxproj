@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0A98E7206102930057CCFF /* CoreDataEntities.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB0A98E5206102930057CCFF /* CoreDataEntities.xcdatamodeld */; };
 		FB741EE7204D3266003E4B6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB741EE6204D3266003E4B6C /* AppDelegate.swift */; };
 		FB741EE9204D3266003E4B6C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB741EE8204D3266003E4B6C /* FirstViewController.swift */; };
 		FB741EEB204D3266003E4B6C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB741EEA204D3266003E4B6C /* SecondViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB0A98E6206102930057CCFF /* CoreDataEntities.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataEntities.xcdatamodel; sourceTree = "<group>"; };
 		FB741EE3204D3266003E4B6C /* godori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = godori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB741EE6204D3266003E4B6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB741EE8204D3266003E4B6C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		FB741EE5204D3266003E4B6C /* godori */ = {
 			isa = PBXGroup;
 			children = (
+				FBF271D5204FD05B00B386B5 /* Model */,
 				FB741EE6204D3266003E4B6C /* AppDelegate.swift */,
 				FB741EE8204D3266003E4B6C /* FirstViewController.swift */,
 				FB741EEA204D3266003E4B6C /* SecondViewController.swift */,
@@ -97,6 +100,14 @@
 				FB741EFF204D3266003E4B6C /* Info.plist */,
 			);
 			path = godoriTests;
+			sourceTree = "<group>";
+		};
+		FBF271D5204FD05B00B386B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB0A98E5206102930057CCFF /* CoreDataEntities.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB741EEB204D3266003E4B6C /* SecondViewController.swift in Sources */,
+				FB0A98E7206102930057CCFF /* CoreDataEntities.xcdatamodeld in Sources */,
 				FB741EE7204D3266003E4B6C /* AppDelegate.swift in Sources */,
 				FB741EE9204D3266003E4B6C /* FirstViewController.swift in Sources */,
 			);
@@ -450,6 +462,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FB0A98E5206102930057CCFF /* CoreDataEntities.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FB0A98E6206102930057CCFF /* CoreDataEntities.xcdatamodel */,
+			);
+			currentVersion = FB0A98E6206102930057CCFF /* CoreDataEntities.xcdatamodel */;
+			path = CoreDataEntities.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FB741EDB204D3266003E4B6C /* Project object */;
 }
