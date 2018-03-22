@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FB0A98E7206102930057CCFF /* CoreDataEntities.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB0A98E5206102930057CCFF /* CoreDataEntities.xcdatamodeld */; };
 		FB0A98E9206376810057CCFF /* UsersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A98E8206376810057CCFF /* UsersCollectionViewController.swift */; };
+		FB0A98EC20637BEE0057CCFF /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A98EA20637BEE0057CCFF /* UserCollectionViewCell.swift */; };
+		FB0A98ED20637BEE0057CCFF /* UserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB0A98EB20637BEE0057CCFF /* UserCollectionViewCell.xib */; };
 		FB741EE7204D3266003E4B6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB741EE6204D3266003E4B6C /* AppDelegate.swift */; };
 		FB741EE9204D3266003E4B6C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB741EE8204D3266003E4B6C /* FirstViewController.swift */; };
 		FB741EEE204D3266003E4B6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB741EEC204D3266003E4B6C /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		FB0A98E6206102930057CCFF /* CoreDataEntities.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataEntities.xcdatamodel; sourceTree = "<group>"; };
 		FB0A98E8206376810057CCFF /* UsersCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCollectionViewController.swift; sourceTree = "<group>"; };
+		FB0A98EA20637BEE0057CCFF /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
+		FB0A98EB20637BEE0057CCFF /* UserCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCollectionViewCell.xib; sourceTree = "<group>"; };
 		FB741EE3204D3266003E4B6C /* godori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = godori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB741EE6204D3266003E4B6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB741EE8204D3266003E4B6C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +64,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB0A98EE20637BF60057CCFF /* Users Page  */ = {
+			isa = PBXGroup;
+			children = (
+				FB0A98E8206376810057CCFF /* UsersCollectionViewController.swift */,
+				FB0A98EA20637BEE0057CCFF /* UserCollectionViewCell.swift */,
+				FB0A98EB20637BEE0057CCFF /* UserCollectionViewCell.xib */,
+			);
+			path = "Users Page ";
+			sourceTree = "<group>";
+		};
 		FB741EDA204D3266003E4B6C = {
 			isa = PBXGroup;
 			children = (
@@ -81,10 +95,10 @@
 		FB741EE5204D3266003E4B6C /* godori */ = {
 			isa = PBXGroup;
 			children = (
+				FB0A98EE20637BF60057CCFF /* Users Page  */,
 				FBF271D5204FD05B00B386B5 /* Model */,
 				FB741EE6204D3266003E4B6C /* AppDelegate.swift */,
 				FB741EE8204D3266003E4B6C /* FirstViewController.swift */,
-				FB0A98E8206376810057CCFF /* UsersCollectionViewController.swift */,
 				FB741EEC204D3266003E4B6C /* Main.storyboard */,
 				FB741EEF204D3266003E4B6C /* Assets.xcassets */,
 				FB741EF1204D3266003E4B6C /* LaunchScreen.storyboard */,
@@ -194,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB741EF3204D3266003E4B6C /* LaunchScreen.storyboard in Resources */,
+				FB0A98ED20637BEE0057CCFF /* UserCollectionViewCell.xib in Resources */,
 				FB741EF0204D3266003E4B6C /* Assets.xcassets in Resources */,
 				FB741EEE204D3266003E4B6C /* Main.storyboard in Resources */,
 			);
@@ -217,6 +232,7 @@
 				FB741EE7204D3266003E4B6C /* AppDelegate.swift in Sources */,
 				FB741EE9204D3266003E4B6C /* FirstViewController.swift in Sources */,
 				FB0A98E9206376810057CCFF /* UsersCollectionViewController.swift in Sources */,
+				FB0A98EC20637BEE0057CCFF /* UserCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
