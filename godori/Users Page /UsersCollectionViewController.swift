@@ -14,7 +14,7 @@ private let userCellReuseIdentifier = "UserCellIdentifier"
 private let userCellWidth = 240.0
 private let userCellHeight = 240.0
 
-//private var fetchedResultsController: NSFetchedResultsController!
+private var resultsController: NSFetchedResultsController<NSManagedObject>!
 
 class UsersCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
@@ -30,9 +30,15 @@ class UsersCollectionViewController: UICollectionViewController, UICollectionVie
     }
     
     func setupNavigationBar() {
-        navigationItem.title = "선수님들"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationItem.largeTitleDisplayMode = .always
+        navigationItem.largeTitleDisplayMode = .always
+        navigationItem.title = "선수님들"
+        
+        // Add button
+        let addBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add,
+                                                    target: self,
+                                                    action: #selector(addUser(sender:)))
+        navigationItem.rightBarButtonItem = addBarButtonItem
     }
     
     /*
@@ -107,13 +113,19 @@ class UsersCollectionViewController: UICollectionViewController, UICollectionVie
     
 }
 
+// MARK: Add User Logic
+extension UsersCollectionViewController {
+    @objc func addUser(sender: UIBarButtonItem) {
+        print("test")
+    }
+}
+
 //// MARK: Core Data
 //extension UsersCollectionViewController {
 //    func initializeFetchedResultsController() {
-//        let request = NSFetchRequest(entityName: "CDUser")
-//        let departmentSort = NSSortDescriptor(key: "department.name", ascending: true)
-//        let lastNameSort = NSSortDescriptor(key: "lastName", ascending: true)
-//        request.sortDescriptors = [departmentSort, lastNameSort]
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CDUser")
+//        let firstNameSort = NSSortDescriptor(key: "firstName", ascending: true)
+//        request.sortDescriptors = [firstNameSort]
 //
 //        let moc = dataController.managedObjectContext
 //        fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
