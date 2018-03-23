@@ -9,6 +9,11 @@
 import UIKit
 import CoreData
 
+enum UserSections: Int {
+    case users
+    case totalNumberOfSections
+}
+
 private let userCellNibName = "UserCollectionViewCell"
 private let userCellReuseIdentifier = "UserCellIdentifier"
 private let userCellWidth = 240.0
@@ -21,7 +26,7 @@ class UsersCollectionViewController: UICollectionViewController, UICollectionVie
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        
+        initializeResultsController()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -60,24 +65,29 @@ class UsersCollectionViewController: UICollectionViewController, UICollectionVie
     // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        return resultsController.sections!.count
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 6
+        guard let sections = resultsController.sections else { fatalError("No sections in results controller") }
+        
+        return sections[section].numberOfObjects
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: userCellReuseIdentifier,
                                                       for: indexPath) as! UserCollectionViewCell
         
+        let user = resultsController.object(at: indexPath) as! CDUser
         cell.userImageView.image = UIImage(named: "sample")
-        cell.userNameLabel.text = "케니젤리"
+        cell.userNameLabel.text = user.name
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(8, 8, 8, 8)
     }
     
     // MARK: UICollectionViewDelegate
@@ -116,26 +126,70 @@ class UsersCollectionViewController: UICollectionViewController, UICollectionVie
 // MARK: Add User Logic
 extension UsersCollectionViewController {
     @objc func addUser(sender: UIBarButtonItem) {
-        print("test")
+        let ac = UIAlertController(title: "선수 이름을 넣어라", message: "한번 들어오면 못 나간다", preferredStyle: .alert)
+        
+        ac.addAction(UIAlertAction(title: "나 그냥 평범하게 살래", style: .cancel, handler: nil))
+        ac.addAction(UIAlertAction(title: "타짜 가즈아!", style: .default, handler: { alert -> Void in
+            let nameField = ac.textFields![0] as UITextField
+            
+            if nameField.text != "" {
+                guard let moc = self.managedObjectContext else { fatalError("Unable retrieve Managed Object Context") }
+                
+                let newUser = NSEntityDescription.insertNewObject(forEntityName: "CDUser", into: moc) as! CDUser
+                newUser.userID = UUID()
+                newUser.name = nameField.text
+                newUser.createdAt = Date()
+                
+                do {
+                    try moc.save()
+                } catch {
+                    fatalError("Failure to save context: \(error)")
+                }
+            } else {
+                let errorAlert = UIAlertController(title: "이름 쓰라고", message: "머저리야", preferredStyle: .alert)
+                errorAlert.addAction(UIAlertAction(title: "넵", style: .cancel, handler: {
+                    alert -> Void in
+                    self.present(ac, animated: true, completion: nil)
+                }))
+                self.present(errorAlert, animated: true, completion: nil)
+            }
+        }))
+        
+        ac.addTextField(configurationHandler: { (textField) -> Void in
+            textField.placeholder = "선수 이름"
+            textField.textAlignment = .center
+        })
+        
+        present(ac, animated: true, completion: nil)
     }
 }
 
-//// MARK: Core Data
-//extension UsersCollectionViewController {
-//    func initializeFetchedResultsController() {
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CDUser")
-//        let firstNameSort = NSSortDescriptor(key: "firstName", ascending: true)
-//        request.sortDescriptors = [firstNameSort]
-//
-//        let moc = dataController.managedObjectContext
-//        fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
-//        fetchedResultsController.delegate = self
-//
-//        do {
-//            try fetchedResultsController.performFetch()
-//        } catch {
-//            fatalError("Failed to initialize FetchedResultsController: \(error)")
-//        }
-//    }
-//}
+// MARK: Core Data
+extension UsersCollectionViewController: NSFetchedResultsControllerDelegate {
+    var managedObjectContext: NSManagedObjectContext? {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
+        return appDelegate.persistentContainer.viewContext
+    }
+    
+    func initializeResultsController() {
+        let request = NSFetchRequest<NSManagedObject>(entityName: "CDUser")
+        let firstNameSort = NSSortDescriptor(key: "createdAt", ascending: false)
+        request.sortDescriptors = [firstNameSort]
+        
+        guard let moc = managedObjectContext else { fatalError("Unable retrieve Managed Object Context") }
+        resultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+        resultsController.delegate = self
+
+        do {
+            try resultsController.performFetch()
+        } catch let error as NSError {
+            print("Failed to initialize FetchedResultsController: \(error)")
+        }
+    }
+
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        // TODO:
+        collectionView?.reloadData()
+    }
+}
 
