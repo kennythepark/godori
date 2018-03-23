@@ -74,6 +74,13 @@
 			path = "Users Page ";
 			sourceTree = "<group>";
 		};
+		FB0A991E2064DA1B0057CCFF /* Game Page */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Game Page";
+			sourceTree = "<group>";
+		};
 		FB741EDA204D3266003E4B6C = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +102,7 @@
 		FB741EE5204D3266003E4B6C /* godori */ = {
 			isa = PBXGroup;
 			children = (
+				FB0A991E2064DA1B0057CCFF /* Game Page */,
 				FB0A98EE20637BF60057CCFF /* Users Page  */,
 				FBF271D5204FD05B00B386B5 /* Model */,
 				FB741EE6204D3266003E4B6C /* AppDelegate.swift */,

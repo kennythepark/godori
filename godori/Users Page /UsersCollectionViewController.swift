@@ -80,7 +80,9 @@ class UsersCollectionViewController: UICollectionViewController, UICollectionVie
                                                       for: indexPath) as! UserCollectionViewCell
         
         let user = resultsController.object(at: indexPath) as! CDUser
-        cell.userImageView.image = UIImage(named: "sample")
+        
+        // TO-DO: 6 is the number of random images, get rid of the code smell once image uploading is complete
+        cell.userImageView.image = UIImage(named: "sample" + "\(indexPath.row % 6)")?.withRenderingMode(.alwaysOriginal)
         cell.userNameLabel.text = user.name
         
         return cell
