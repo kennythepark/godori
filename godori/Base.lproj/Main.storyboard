@@ -27,17 +27,32 @@
             </objects>
             <point key="canvasLocation" x="750" y="-334"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="wCM-Dh-ZIP">
             <objects>
-                <viewController id="PBe-1C-VJM" sceneMemberID="viewController">
+                <viewController id="PBe-1C-VJM" customClass="GameViewController" customModule="godori" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dnp-XU-JsH">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tAi-WI-W3R">
+                                <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tAi-WI-W3R" firstAttribute="leading" secondItem="DPv-pj-RRM" secondAttribute="leading" id="GR7-sI-qQ4"/>
+                            <constraint firstItem="DPv-pj-RRM" firstAttribute="bottom" secondItem="tAi-WI-W3R" secondAttribute="bottom" id="Z9Z-nH-S8T"/>
+                            <constraint firstItem="DPv-pj-RRM" firstAttribute="trailing" secondItem="tAi-WI-W3R" secondAttribute="trailing" id="clz-oS-RQj"/>
+                            <constraint firstItem="tAi-WI-W3R" firstAttribute="top" secondItem="DPv-pj-RRM" secondAttribute="top" id="mUG-HT-5uN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="DPv-pj-RRM"/>
                     </view>
                     <navigationItem key="navigationItem" id="nyF-U4-SkC"/>
+                    <connections>
+                        <outlet property="gameTableView" destination="tAi-WI-W3R" id="m73-UU-eOZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UvQ-rZ-K8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

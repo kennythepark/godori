@@ -168,6 +168,7 @@ extension UsersCollectionViewController {
 
 // MARK: Core Data
 extension UsersCollectionViewController: NSFetchedResultsControllerDelegate {
+    
     var managedObjectContext: NSManagedObjectContext? {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
         return appDelegate.persistentContainer.viewContext
