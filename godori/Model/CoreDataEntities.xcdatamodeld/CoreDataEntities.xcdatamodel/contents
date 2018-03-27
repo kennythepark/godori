@@ -5,7 +5,6 @@
         <attribute name="ins" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="outs" optional="YES" attributeType="Transformable" syncable="YES"/>
         <relationship name="session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDSession" inverseName="ledger" inverseEntity="CDSession" syncable="YES"/>
-        <relationship name="users" optional="YES" toMany="YES" maxCount="2" deletionRule="Nullify" destinationEntity="CDUser" inverseName="ledgers" inverseEntity="CDUser" syncable="YES"/>
     </entity>
     <entity name="CDSession" representedClassName="CDSession" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -17,12 +16,11 @@
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="ledgers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDLedger" inverseName="users" inverseEntity="CDLedger" syncable="YES"/>
         <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDSession" inverseName="users" inverseEntity="CDSession" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CDLedger" positionX="-198" positionY="243" width="128" height="120"/>
+        <element name="CDLedger" positionX="-198" positionY="243" width="128" height="28"/>
         <element name="CDSession" positionX="-11" positionY="243" width="128" height="103"/>
-        <element name="CDUser" positionX="-198" positionY="405" width="315" height="118"/>
+        <element name="CDUser" positionX="-198" positionY="405" width="315" height="28"/>
     </elements>
 </model>
