@@ -149,7 +149,7 @@ extension UsersCollectionViewController {
                 }
             } else {
                 let errorAlert = UIAlertController(title: "이름 쓰라고", message: "머저리야", preferredStyle: .alert)
-                errorAlert.addAction(UIAlertAction(title: "넵", style: .cancel, handler: {
+                errorAlert.addAction(UIAlertAction(title: "넵 ㅠㅠ", style: .cancel, handler: {
                     alert -> Void in
                     self.present(ac, animated: true, completion: nil)
                 }))

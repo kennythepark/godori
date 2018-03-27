@@ -41,6 +41,16 @@ extension GameViewController {
     }
     
     @IBAction func startNewGame(_ sender: Any) {
+        performSegue(withIdentifier: "toSetup", sender: self)
+    }
+    
+    func startGameWithNewUsers(_ selectedUsers: [CDUser]) {
+        // Dismiss setup view controller
+        dismiss(animated: true, completion: nil)
+        
+        for users in selectedUsers {
+            print(users.name)
+        }
         
     }
 }
@@ -99,6 +109,11 @@ extension GameViewController: NSFetchedResultsControllerDelegate {
         } catch let error as NSError {
             print("Failed to initialize FetchedResultsController: \(error)")
         }
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        // TODO:
+        gameTableView?.reloadData()
     }
     
 }
