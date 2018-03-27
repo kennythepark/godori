@@ -138,7 +138,6 @@ extension UsersCollectionViewController {
                 guard let moc = self.managedObjectContext else { fatalError("Unable retrieve Managed Object Context") }
                 
                 let newUser = NSEntityDescription.insertNewObject(forEntityName: "CDUser", into: moc) as! CDUser
-                newUser.userID = UUID()
                 newUser.name = nameField.text
                 newUser.createdAt = Date()
                 

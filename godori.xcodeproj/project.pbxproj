@@ -21,6 +21,7 @@
 		FB741EF0204D3266003E4B6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB741EEF204D3266003E4B6C /* Assets.xcassets */; };
 		FB741EF3204D3266003E4B6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB741EF1204D3266003E4B6C /* LaunchScreen.storyboard */; };
 		FB741EFE204D3266003E4B6C /* godoriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB741EFD204D3266003E4B6C /* godoriTests.swift */; };
+		FBCB655D206A37A2009CE3AF /* InsertScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB655C206A37A2009CE3AF /* InsertScoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		FB741EF9204D3266003E4B6C /* godoriTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = godoriTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB741EFD204D3266003E4B6C /* godoriTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = godoriTests.swift; sourceTree = "<group>"; };
 		FB741EFF204D3266003E4B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBCB655C206A37A2009CE3AF /* InsertScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertScoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				FB3799C9206A08410036AA6B /* GamePlayViewController.swift */,
+				FBCB655C206A37A2009CE3AF /* InsertScoreViewController.swift */,
 			);
 			path = "Game Play Page";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				FB741EE9204D3266003E4B6C /* GameViewController.swift in Sources */,
 				FB3799CA206A08410036AA6B /* GamePlayViewController.swift in Sources */,
 				FB0A98E9206376810057CCFF /* UsersCollectionViewController.swift in Sources */,
+				FBCB655D206A37A2009CE3AF /* InsertScoreViewController.swift in Sources */,
 				FB0A98EC20637BEE0057CCFF /* UserCollectionViewCell.swift in Sources */,
 				FB0A99212064E27C0057CCFF /* GameTableViewCell.swift in Sources */,
 			);

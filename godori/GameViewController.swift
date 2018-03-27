@@ -48,10 +48,21 @@ extension GameViewController {
         // Dismiss setup view controller
         dismiss(animated: true, completion: nil)
         
-        for users in selectedUsers {
-            print(users.name)
-        }
+        guard let moc = self.managedObjectContext else { fatalError("Unable retrieve Managed Object Context") }
         
+        let newGame = NSEntityDescription.insertNewObject(forEntityName: "CDSession", into: moc) as! CDSession
+        newGame.createdAt = Date()
+        newGame.addToUsers(NSSet(array: selectedUsers))
+        
+        // Create ledger
+        let newLedger = NSEntityDescription.insertNewObject(forEntityName: "CDLedger", into: moc) as! CDLedger
+        newLedger.session = newGame
+        
+        do {
+            try moc.save()
+        } catch {
+            fatalError("Failure to save context: \(error)")
+        }
     }
 }
 
@@ -70,10 +81,16 @@ extension GameViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: gameCellReuseIdentifier, for: indexPath)
         
-        // Set up the cell
-        guard let object = self.resultsController?.object(at: indexPath) else {
-            fatalError("Attempt to configure cell without a managed object")
+        let game = resultsController.object(at: indexPath) as! CDSession
+        
+        var cellText = ""
+
+        for case let user as CDUser in game.users! {
+            cellText.append(user.name! + "     ")
         }
+        
+        cell.textLabel?.text = cellText
+        cell.accessoryType = .disclosureIndicator
         
         return cell
     }

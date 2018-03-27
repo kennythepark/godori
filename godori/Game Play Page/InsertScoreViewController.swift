@@ -1,18 +1,19 @@
 //
-//  GamePlayViewController.swift
+//  InsertScoreViewController.swift
 //  godori
 //
-//  Created by KP on 2018-03-26.
+//  Created by KP on 2018-03-27.
 //  Copyright © 2018 KP. All rights reserved.
 //
 
 import UIKit
 
-class GamePlayViewController: UIViewController {
+class InsertScoreViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Do any additional setup after loading the view.
     }
     
 

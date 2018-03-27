@@ -138,7 +138,7 @@
                     <connections>
                         <outlet property="gameTableView" destination="tAi-WI-W3R" id="m73-UU-eOZ"/>
                         <outlet property="newGameButton" destination="top-YF-qHC" id="9U4-NZ-EWv"/>
-                        <segue destination="CZt-Jb-B83" kind="presentation" identifier="toGame" id="8vF-2Z-GLE"/>
+                        <segue destination="CZt-Jb-B83" kind="presentation" identifier="toGame" modalPresentationStyle="fullScreen" id="8vF-2Z-GLE"/>
                         <segue destination="8Ly-aL-njv" kind="presentation" identifier="toSetup" modalPresentationStyle="formSheet" id="6Ab-eB-3gs"/>
                     </connections>
                 </viewController>
@@ -156,10 +156,65 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="JaM-qj-Gpr"/>
                     </view>
+                    <connections>
+                        <segue destination="PYn-Eq-akd" kind="presentation" identifier="calculateTransaction" modalPresentationStyle="formSheet" id="sTf-ij-cbA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MhO-Dx-I5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2129" y="-334"/>
+        </scene>
+        <!--Insert Score View Controller-->
+        <scene sceneID="Fe5-nP-K0W">
+            <objects>
+                <viewController id="PYn-Eq-akd" customClass="InsertScoreViewController" customModule="godori" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U2i-ie-Uma">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SHOW ME THE MONEY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNP-mD-0cg">
+                                <rect key="frame" x="124" y="20" width="292" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymf-Fi-tNg">
+                                <rect key="frame" x="279" y="538" width="223" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <state key="normal" title="확인">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="gameStartAction:" destination="8Ly-aL-njv" eventType="touchUpInside" id="WiK-en-O1X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLM-n2-ubg">
+                                <rect key="frame" x="39" y="538" width="223" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <state key="normal" title="취소">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissView:" destination="8Ly-aL-njv" eventType="touchUpInside" id="Y4b-fX-CUA"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4eS-Wv-1En">
+                                <rect key="frame" x="39" y="69" width="463" height="447"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="uEB-9t-ph6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5uU-6F-o71" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2807.8125" y="-334.375"/>
         </scene>
         <!--Users Collection View Controller-->
         <scene sceneID="4lA-Oy-xsE">
