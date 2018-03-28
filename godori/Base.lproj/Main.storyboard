@@ -153,16 +153,69 @@
                     <view key="view" contentMode="scaleToFill" id="lPS-Vy-Tsz">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IQ-cr-hGA">
+                                <rect key="frame" x="884" y="40" width="120" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="hH7-H7-cXS"/>
+                                    <constraint firstAttribute="height" constant="40" id="oWN-Zl-Jut"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="나가기">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveAndCloseAction:" destination="CZt-Jb-B83" eventType="touchUpInside" id="KBa-OY-aia"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0Bw-Jg-Ry9">
+                                <rect key="frame" x="0.0" y="100" width="1024" height="668"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TEd-FP-ll8">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lZr-hO-Us7">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0Bw-Jg-Ry9" firstAttribute="trailing" secondItem="JaM-qj-Gpr" secondAttribute="trailing" id="2nk-df-2qd"/>
+                            <constraint firstItem="0Bw-Jg-Ry9" firstAttribute="top" secondItem="1IQ-cr-hGA" secondAttribute="bottom" constant="20" id="4Oc-yW-tp8"/>
+                            <constraint firstItem="0Bw-Jg-Ry9" firstAttribute="bottom" secondItem="JaM-qj-Gpr" secondAttribute="bottom" id="F4V-kk-PmO"/>
+                            <constraint firstItem="0Bw-Jg-Ry9" firstAttribute="leading" secondItem="JaM-qj-Gpr" secondAttribute="leading" id="NSF-Ty-5bu"/>
+                            <constraint firstItem="JaM-qj-Gpr" firstAttribute="trailing" secondItem="1IQ-cr-hGA" secondAttribute="trailing" constant="20" id="gHz-Lp-bag"/>
+                            <constraint firstItem="1IQ-cr-hGA" firstAttribute="top" secondItem="JaM-qj-Gpr" secondAttribute="top" constant="20" id="gmA-6F-h5y"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JaM-qj-Gpr"/>
                     </view>
                     <connections>
+                        <outlet property="userCollectionView" destination="0Bw-Jg-Ry9" id="l9E-GU-s9W"/>
                         <segue destination="PYn-Eq-akd" kind="presentation" identifier="calculateTransaction" modalPresentationStyle="formSheet" id="sTf-ij-cbA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MhO-Dx-I5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2129" y="-334"/>
+            <point key="canvasLocation" x="2128.7109375" y="-334.375"/>
         </scene>
         <!--Insert Score View Controller-->
         <scene sceneID="Fe5-nP-K0W">
