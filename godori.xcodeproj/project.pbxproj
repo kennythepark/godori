@@ -13,7 +13,6 @@
 		FB0A98ED20637BEE0057CCFF /* UserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB0A98EB20637BEE0057CCFF /* UserCollectionViewCell.xib */; };
 		FB0A99212064E27C0057CCFF /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A991F2064E27C0057CCFF /* GameTableViewCell.swift */; };
 		FB0A99222064E27C0057CCFF /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB0A99202064E27C0057CCFF /* GameTableViewCell.xib */; };
-		FB3799CA206A08410036AA6B /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3799C9206A08410036AA6B /* GamePlayViewController.swift */; };
 		FB3799CC206A09F10036AA6B /* GameSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3799CB206A09F10036AA6B /* GameSetupViewController.swift */; };
 		FB741EE7204D3266003E4B6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB741EE6204D3266003E4B6C /* AppDelegate.swift */; };
 		FB741EE9204D3266003E4B6C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB741EE8204D3266003E4B6C /* GameViewController.swift */; };
@@ -21,7 +20,10 @@
 		FB741EF0204D3266003E4B6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB741EEF204D3266003E4B6C /* Assets.xcassets */; };
 		FB741EF3204D3266003E4B6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB741EF1204D3266003E4B6C /* LaunchScreen.storyboard */; };
 		FB741EFE204D3266003E4B6C /* godoriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB741EFD204D3266003E4B6C /* godoriTests.swift */; };
+		FBB5D70D206B82C10082F9A0 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB5D70C206B82C10082F9A0 /* GamePlayViewController.swift */; };
 		FBCB655D206A37A2009CE3AF /* InsertScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB655C206A37A2009CE3AF /* InsertScoreViewController.swift */; };
+		FBCB6562206B730F009CE3AF /* GamePlayUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB6560206B730F009CE3AF /* GamePlayUserCollectionViewCell.swift */; };
+		FBCB6563206B730F009CE3AF /* GamePlayUserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCB6561206B730F009CE3AF /* GamePlayUserCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +43,6 @@
 		FB0A98EB20637BEE0057CCFF /* UserCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCollectionViewCell.xib; sourceTree = "<group>"; };
 		FB0A991F2064E27C0057CCFF /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		FB0A99202064E27C0057CCFF /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
-		FB3799C9206A08410036AA6B /* GamePlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		FB3799CB206A09F10036AA6B /* GameSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupViewController.swift; sourceTree = "<group>"; };
 		FB741EE3204D3266003E4B6C /* godori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = godori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB741EE6204D3266003E4B6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +54,10 @@
 		FB741EF9204D3266003E4B6C /* godoriTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = godoriTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB741EFD204D3266003E4B6C /* godoriTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = godoriTests.swift; sourceTree = "<group>"; };
 		FB741EFF204D3266003E4B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBB5D70C206B82C10082F9A0 /* GamePlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		FBCB655C206A37A2009CE3AF /* InsertScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertScoreViewController.swift; sourceTree = "<group>"; };
+		FBCB6560206B730F009CE3AF /* GamePlayUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayUserCollectionViewCell.swift; sourceTree = "<group>"; };
+		FBCB6561206B730F009CE3AF /* GamePlayUserCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamePlayUserCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +102,10 @@
 		FB3799C8206A082A0036AA6B /* Game Play Page */ = {
 			isa = PBXGroup;
 			children = (
-				FB3799C9206A08410036AA6B /* GamePlayViewController.swift */,
+				FBB5D70C206B82C10082F9A0 /* GamePlayViewController.swift */,
 				FBCB655C206A37A2009CE3AF /* InsertScoreViewController.swift */,
+				FBCB6560206B730F009CE3AF /* GamePlayUserCollectionViewCell.swift */,
+				FBCB6561206B730F009CE3AF /* GamePlayUserCollectionViewCell.xib */,
 			);
 			path = "Game Play Page";
 			sourceTree = "<group>";
@@ -125,8 +131,8 @@
 		FB741EE5204D3266003E4B6C /* godori */ = {
 			isa = PBXGroup;
 			children = (
-				FB3799C8206A082A0036AA6B /* Game Play Page */,
 				FB0A991E2064DA1B0057CCFF /* Game Records Page */,
+				FB3799C8206A082A0036AA6B /* Game Play Page */,
 				FB0A98EE20637BF60057CCFF /* Users Page  */,
 				FBF271D5204FD05B00B386B5 /* Model */,
 				FB741EE6204D3266003E4B6C /* AppDelegate.swift */,
@@ -239,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB741EF3204D3266003E4B6C /* LaunchScreen.storyboard in Resources */,
+				FBCB6563206B730F009CE3AF /* GamePlayUserCollectionViewCell.xib in Resources */,
 				FB0A99222064E27C0057CCFF /* GameTableViewCell.xib in Resources */,
 				FB0A98ED20637BEE0057CCFF /* UserCollectionViewCell.xib in Resources */,
 				FB741EF0204D3266003E4B6C /* Assets.xcassets in Resources */,
@@ -264,8 +271,9 @@
 				FB741EE7204D3266003E4B6C /* AppDelegate.swift in Sources */,
 				FB3799CC206A09F10036AA6B /* GameSetupViewController.swift in Sources */,
 				FB741EE9204D3266003E4B6C /* GameViewController.swift in Sources */,
-				FB3799CA206A08410036AA6B /* GamePlayViewController.swift in Sources */,
+				FBCB6562206B730F009CE3AF /* GamePlayUserCollectionViewCell.swift in Sources */,
 				FB0A98E9206376810057CCFF /* UsersCollectionViewController.swift in Sources */,
+				FBB5D70D206B82C10082F9A0 /* GamePlayViewController.swift in Sources */,
 				FBCB655D206A37A2009CE3AF /* InsertScoreViewController.swift in Sources */,
 				FB0A98EC20637BEE0057CCFF /* UserCollectionViewCell.swift in Sources */,
 				FB0A99212064E27C0057CCFF /* GameTableViewCell.swift in Sources */,

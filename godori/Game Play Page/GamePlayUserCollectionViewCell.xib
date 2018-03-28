@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GamePlayUserCollectionViewCell" customModule="godori" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2E-gc-Dbg">
+                        <rect key="frame" x="20" y="20" width="160" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="Ppv-tg-tNg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgX-aY-7Q5">
+                        <rect key="frame" x="20" y="320" width="160" height="60"/>
+                        <color key="backgroundColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="kji-rY-LxV"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                        <state key="normal" title="돈 받기">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="calculateScoreAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="MYN-fA-c3y"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czZ-G1-kRO">
+                        <rect key="frame" x="20" y="170.5" width="160" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="W82-0B-2RJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재점수 분발하쇼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oee-fo-1vV">
+                        <rect key="frame" x="20" y="140.5" width="160" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="eNq-NQ-ccy"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="czZ-G1-kRO" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="7QP-YX-6h3"/>
+                <constraint firstAttribute="trailing" secondItem="Y2E-gc-Dbg" secondAttribute="trailing" constant="20" id="8tx-kt-9tU"/>
+                <constraint firstAttribute="trailing" secondItem="MgX-aY-7Q5" secondAttribute="trailing" constant="20" id="Fs4-wg-R20"/>
+                <constraint firstItem="czZ-G1-kRO" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Fsp-89-yc1"/>
+                <constraint firstItem="MgX-aY-7Q5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="HKh-5k-VIe"/>
+                <constraint firstItem="Y2E-gc-Dbg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="NjD-ya-Z94"/>
+                <constraint firstAttribute="bottom" secondItem="MgX-aY-7Q5" secondAttribute="bottom" constant="20" id="Nwl-Rx-xLw"/>
+                <constraint firstAttribute="trailing" secondItem="Oee-fo-1vV" secondAttribute="trailing" constant="20" id="VdC-t4-BmC"/>
+                <constraint firstItem="Oee-fo-1vV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="YbT-Fd-nd4"/>
+                <constraint firstAttribute="trailing" secondItem="czZ-G1-kRO" secondAttribute="trailing" constant="20" id="ZGc-Fz-CGr"/>
+                <constraint firstItem="czZ-G1-kRO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="ZQv-9O-rfx"/>
+                <constraint firstItem="Y2E-gc-Dbg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="ZYa-3B-FDO"/>
+                <constraint firstItem="czZ-G1-kRO" firstAttribute="top" secondItem="Oee-fo-1vV" secondAttribute="bottom" constant="10" id="l52-zp-4cj"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="currentScoreLabel" destination="czZ-G1-kRO" id="ejX-0w-qis"/>
+                <outlet property="nameLabel" destination="Y2E-gc-Dbg" id="8k7-t2-hTU"/>
+                <outlet property="statusLabel" destination="Oee-fo-1vV" id="3u4-uo-9zU"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>
