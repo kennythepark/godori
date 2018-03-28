@@ -9,15 +9,17 @@
 import UIKit
 import CoreData
 
+private let headerHeight: CGFloat = 100
+
+private let gameCellNibName = "GameTableViewCell"
+private let gameCellReuseIdentifier = "GameCellIdentifier"
+
 class GameViewController: UIViewController {
     
     @IBOutlet weak var gameTableView: UITableView!
     @IBOutlet weak var newGameButton: UIButton!
-    
-    private let headerHeight: CGFloat = 100
-    
-    private let gameCellNibName = "GameTableViewCell"
-    private let gameCellReuseIdentifier = "GameCellIdentifier"
+
+    var selectedGame: CDSession?
     
     private var resultsController: NSFetchedResultsController<NSManagedObject>!
 
@@ -66,8 +68,8 @@ extension GameViewController {
     }
 }
 
-// MARK: TableView Data Source
-extension GameViewController: UITableViewDataSource {
+// MARK: TableView Related
+extension GameViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sections = resultsController.sections else {
@@ -95,12 +97,21 @@ extension GameViewController: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let game = resultsController.object(at: indexPath) as! CDSession
+        selectedGame = game
+        
+        performSegue(withIdentifier: "toGame", sender: self)
+    }
     
-}
-
-// MARK: TableView Delegate
-extension GameViewController: UITableViewDelegate {
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toGame" {
+            if let gamePlayVC = segue.destination as? GamePlayViewController {
+                guard let selectedGame = selectedGame else { return }
+                gamePlayVC.session = selectedGame
+            }
+        }
+    }
 }
 
 // MARK: Core Data
@@ -123,6 +134,7 @@ extension GameViewController: NSFetchedResultsControllerDelegate {
         
         do {
             try resultsController.performFetch()
+            print("\(Date()) : GameViewController's FetchedResultsController has successfully been initialized.")
         } catch let error as NSError {
             print("Failed to initialize FetchedResultsController: \(error)")
         }
