@@ -14,23 +14,21 @@ enum UserSections: Int {
     case totalNumberOfSections
 }
 
+private let userCellNibName = "UserCollectionViewCell"
+private let userCellReuseIdentifier = "UserCellIdentifier"
+private let userCellWidth = 240.0
+private let userCellHeight = 240.0
+
 class UsersCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    private let userCellNibName = "UserCollectionViewCell"
-    private let userCellReuseIdentifier = "UserCellIdentifier"
-    private let userCellWidth = 240.0
-    private let userCellHeight = 240.0
-    
     private var resultsController: NSFetchedResultsController<NSManagedObject>!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         initializeResultsController()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
         
-        self.collectionView!.register(UINib(nibName: userCellNibName, bundle: nil),
+        collectionView!.register(UINib(nibName: userCellNibName, bundle: nil),
                                       forCellWithReuseIdentifier: userCellReuseIdentifier)
     }
     
