@@ -24,6 +24,9 @@
 		FBCB655D206A37A2009CE3AF /* InsertScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB655C206A37A2009CE3AF /* InsertScoreViewController.swift */; };
 		FBCB6562206B730F009CE3AF /* GamePlayUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB6560206B730F009CE3AF /* GamePlayUserCollectionViewCell.swift */; };
 		FBCB6563206B730F009CE3AF /* GamePlayUserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCB6561206B730F009CE3AF /* GamePlayUserCollectionViewCell.xib */; };
+		FBFF99DD206D292E00DAB044 /* InsertScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFF99DB206D292E00DAB044 /* InsertScoreTableViewCell.swift */; };
+		FBFF99DE206D292E00DAB044 /* InsertScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBFF99DC206D292E00DAB044 /* InsertScoreTableViewCell.xib */; };
+		FBFF99E1206D7B8F00DAB044 /* UIColor+Godori.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFF99E0206D7B8F00DAB044 /* UIColor+Godori.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		FBCB655C206A37A2009CE3AF /* InsertScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertScoreViewController.swift; sourceTree = "<group>"; };
 		FBCB6560206B730F009CE3AF /* GamePlayUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayUserCollectionViewCell.swift; sourceTree = "<group>"; };
 		FBCB6561206B730F009CE3AF /* GamePlayUserCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamePlayUserCollectionViewCell.xib; sourceTree = "<group>"; };
+		FBFF99DB206D292E00DAB044 /* InsertScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertScoreTableViewCell.swift; sourceTree = "<group>"; };
+		FBFF99DC206D292E00DAB044 /* InsertScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsertScoreTableViewCell.xib; sourceTree = "<group>"; };
+		FBFF99E0206D7B8F00DAB044 /* UIColor+Godori.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Godori.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +109,11 @@
 			isa = PBXGroup;
 			children = (
 				FBB5D70C206B82C10082F9A0 /* GamePlayViewController.swift */,
-				FBCB655C206A37A2009CE3AF /* InsertScoreViewController.swift */,
 				FBCB6560206B730F009CE3AF /* GamePlayUserCollectionViewCell.swift */,
 				FBCB6561206B730F009CE3AF /* GamePlayUserCollectionViewCell.xib */,
+				FBCB655C206A37A2009CE3AF /* InsertScoreViewController.swift */,
+				FBFF99DB206D292E00DAB044 /* InsertScoreTableViewCell.swift */,
+				FBFF99DC206D292E00DAB044 /* InsertScoreTableViewCell.xib */,
 			);
 			path = "Game Play Page";
 			sourceTree = "<group>";
@@ -135,6 +143,7 @@
 				FB3799C8206A082A0036AA6B /* Game Play Page */,
 				FB0A98EE20637BF60057CCFF /* Users Page  */,
 				FBF271D5204FD05B00B386B5 /* Model */,
+				FBFF99DF206D7B6C00DAB044 /* Extensions */,
 				FB741EE6204D3266003E4B6C /* AppDelegate.swift */,
 				FB741EEC204D3266003E4B6C /* Main.storyboard */,
 				FB741EEF204D3266003E4B6C /* Assets.xcassets */,
@@ -159,6 +168,14 @@
 				FB0A98E5206102930057CCFF /* CoreDataEntities.xcdatamodeld */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FBFF99DF206D7B6C00DAB044 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FBFF99E0206D7B8F00DAB044 /* UIColor+Godori.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBFF99DE206D292E00DAB044 /* InsertScoreTableViewCell.xib in Resources */,
 				FB741EF3204D3266003E4B6C /* LaunchScreen.storyboard in Resources */,
 				FBCB6563206B730F009CE3AF /* GamePlayUserCollectionViewCell.xib in Resources */,
 				FB0A99222064E27C0057CCFF /* GameTableViewCell.xib in Resources */,
@@ -270,10 +288,12 @@
 				FB0A98E7206102930057CCFF /* CoreDataEntities.xcdatamodeld in Sources */,
 				FB741EE7204D3266003E4B6C /* AppDelegate.swift in Sources */,
 				FB3799CC206A09F10036AA6B /* GameSetupViewController.swift in Sources */,
+				FBFF99E1206D7B8F00DAB044 /* UIColor+Godori.swift in Sources */,
 				FB741EE9204D3266003E4B6C /* GameViewController.swift in Sources */,
 				FBCB6562206B730F009CE3AF /* GamePlayUserCollectionViewCell.swift in Sources */,
 				FB0A98E9206376810057CCFF /* UsersCollectionViewController.swift in Sources */,
 				FBB5D70D206B82C10082F9A0 /* GamePlayViewController.swift in Sources */,
+				FBFF99DD206D292E00DAB044 /* InsertScoreTableViewCell.swift in Sources */,
 				FBCB655D206A37A2009CE3AF /* InsertScoreViewController.swift in Sources */,
 				FB0A98EC20637BEE0057CCFF /* UserCollectionViewCell.swift in Sources */,
 				FB0A99212064E27C0057CCFF /* GameTableViewCell.swift in Sources */,
