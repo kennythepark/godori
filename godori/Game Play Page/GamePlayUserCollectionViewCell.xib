@@ -83,6 +83,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="calculateScoreButton" destination="MgX-aY-7Q5" id="DED-0x-3bl"/>
                 <outlet property="currentScoreLabel" destination="czZ-G1-kRO" id="ejX-0w-qis"/>
                 <outlet property="nameLabel" destination="Y2E-gc-Dbg" id="8k7-t2-hTU"/>
                 <outlet property="statusLabel" destination="Oee-fo-1vV" id="3u4-uo-9zU"/>

@@ -8,23 +8,59 @@
 
 import UIKit
 
-class InsertScoreViewController: UIViewController {
+private let insertScoreCellNibName = "InsertScoreTableViewCell"
+private let insertScoreCellReuseIdentifier = "InsertScoreCellIdentifier"
 
+class InsertScoreViewController: UIViewController {
+    
+    var receiver: CDUser?
+    var payers: [CDUser]?
+    
+    @IBOutlet weak var payersTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        payersTableView.dataSource = self
+        payersTableView.delegate = self
+        payersTableView.separatorStyle = .none
+        
+        payersTableView.register(UINib.init(nibName: insertScoreCellNibName, bundle: nil),
+                                 forCellReuseIdentifier: insertScoreCellReuseIdentifier)
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func confirmAction(_ sender: Any) {
+        presentingViewController?.dismiss(animated: true, completion: nil)
     }
-    */
+    
+    
+    @IBAction func cancelAction(_ sender: Any) {
+        presentingViewController?.dismiss(animated: true, completion: nil)
+    }
 
+}
+
+extension InsertScoreViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return payers!.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80.0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: insertScoreCellReuseIdentifier,
+                                                 for: indexPath) as! InsertScoreTableViewCell
+        
+        guard let payer = payers?[indexPath.row] else { return cell }
+        
+        cell.selectionStyle = .none
+        cell.nameLabel.text = payer.name
+        cell.totalScoreLabel.text = "0"
+        
+        return cell
+    }
+    
+    
 }
