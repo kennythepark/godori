@@ -8,18 +8,16 @@
 
 import UIKit
 
-class GamePlayUserCollectionViewCell: UICollectionViewCell {
+class GamePlayUserCollectionViewCell: BaseShadowCollectionViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var currentScoreLabel: UILabel!
-    @IBOutlet weak var calculateScoreButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
     }
-
-    @IBAction func calculateScoreAction(_ sender: Any) {
-        print("pressed")
-    }
+    
 }

@@ -21,13 +21,13 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅎㅇㅈ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcK-a4-5Nw">
                         <rect key="frame" x="0.0" y="5" width="100" height="60"/>
-                        <color key="backgroundColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="i3b-Tz-iFV"/>
                             <constraint firstAttribute="height" constant="60" id="las-Ad-PeZ"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8v-au-loM" customClass="DetailBakButton" customModule="godori" customModuleProvider="target">
@@ -60,6 +60,15 @@
                             <action selector="pibakAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ga7-Hv-F3X"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oW-N1-GfV">
+                        <rect key="frame" x="136" y="0.0" width="60" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="J5g-Ab-MmM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 : " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QnU-bR-Hic">
                         <rect key="frame" x="100" y="0.0" width="36" height="70"/>
                         <constraints>
@@ -69,15 +78,21 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oW-N1-GfV">
-                        <rect key="frame" x="136" y="0.0" width="120" height="70"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSs-rY-2v8" customClass="DetailBakButton" customModule="godori" customModuleProvider="target">
+                        <rect key="frame" x="216" y="14" width="80" height="40"/>
+                        <color key="backgroundColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="120" id="J5g-Ab-MmM"/>
+                            <constraint firstAttribute="height" constant="40" id="6mU-jF-Qsn"/>
+                            <constraint firstAttribute="width" constant="80" id="8VM-ds-SPM"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <state key="normal" title="적용">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="pibakAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DXJ-VW-KOp"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="dcK-a4-5Nw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3Dc-lZ-2pd"/>
@@ -87,7 +102,9 @@
                     <constraint firstItem="QnU-bR-Hic" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ego-9i-ef2"/>
                     <constraint firstItem="c8v-au-loM" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="H5F-Um-rxt"/>
                     <constraint firstItem="dcK-a4-5Nw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ivv-VF-Lks"/>
+                    <constraint firstItem="sSs-rY-2v8" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ai4-ob-54j"/>
                     <constraint firstAttribute="bottom" secondItem="0oW-N1-GfV" secondAttribute="bottom" id="att-j0-RjF"/>
+                    <constraint firstItem="mCa-xj-Apf" firstAttribute="leading" secondItem="sSs-rY-2v8" secondAttribute="trailing" constant="8" id="c7f-q8-4a3"/>
                     <constraint firstItem="c8v-au-loM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fi3-cv-kgs"/>
                     <constraint firstAttribute="bottom" secondItem="QnU-bR-Hic" secondAttribute="bottom" id="how-0u-Uj8"/>
                     <constraint firstItem="0oW-N1-GfV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="nNy-Nv-t9k"/>

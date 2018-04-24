@@ -81,7 +81,7 @@ extension GamePlayViewController {
 extension GamePlayViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 300, height: 400)
+        return CGSize(width: 200, height: 300)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -96,12 +96,16 @@ extension GamePlayViewController: UICollectionViewDataSource, UICollectionViewDe
         
         cell.nameLabel.text = user.name
         cell.currentScoreLabel.text = String(user.currentScore)
-        cell.calculateScoreButton.tag = indexPath.row
-        cell.calculateScoreButton.addTarget(self,
-                                            action: #selector(performSegueToInsertScoreViewController(sender:)),
-                                            for: .touchUpInside)
+//        cell.calculateScoreButton.tag = indexPath.row
+//        cell.calculateScoreButton.addTarget(self,
+//                                            action: #selector(performSegueToInsertScoreViewController(sender:)),
+//                                            for: .touchUpInside)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("did press at indexPath \(indexPath.row)")
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

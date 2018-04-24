@@ -9,10 +9,10 @@
 
 import UIKit
 
-class UserCollectionViewCell: UICollectionViewCell {
+class UserCollectionViewCell: BaseShadowCollectionViewCell {
     
-    private let cornerRadius: CGFloat = 14.0
-    private let innerMargin: CGFloat = 20.0
+//    private let cornerRadius: CGFloat = 14.0
+//    private let innerMargin: CGFloat = 20.0
 
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -27,7 +27,6 @@ class UserCollectionViewCell: UICollectionViewCell {
         
         configureUserImageViewLayer()
         configureUserNameLabelLayer()
-        configureShadow()
     }
     
     // MARK: Layer Configurations
@@ -48,25 +47,6 @@ class UserCollectionViewCell: UICollectionViewCell {
         userNameLabelMask.frame = userNameLabel.bounds
         userNameLabelMask.path = userNameLabelMaskPath.cgPath
         userNameLabel.layer.mask = userNameLabelMask
-    }
-    
-    private func configureShadow() {
-        // Shadow View
-        self.shadowView?.removeFromSuperview()
-        let shadowView = UIView(frame: CGRect(x: innerMargin,
-                                              y: innerMargin,
-                                              width: bounds.width - (2 * innerMargin),
-                                              height: bounds.height - (2 * innerMargin)))
-        
-        let shadowPath = UIBezierPath(roundedRect: shadowView.bounds, cornerRadius: cornerRadius)
-        shadowView.layer.masksToBounds = false
-        shadowView.layer.shadowRadius = 8.0
-        shadowView.layer.shadowColor = UIColor.black.cgColor
-        shadowView.layer.shadowOpacity = 0.25
-        shadowView.layer.shadowPath = shadowPath.cgPath
-        
-        insertSubview(shadowView, at: 0)
-        self.shadowView = shadowView
     }
 
 }
