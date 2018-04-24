@@ -18,35 +18,48 @@
                 <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2E-gc-Dbg">
-                        <rect key="frame" x="0.0" y="190" width="240" height="50"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lf2-tn-8Hy">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czZ-G1-kRO">
+                                <rect key="frame" x="58" y="84" width="124.5" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2E-gc-Dbg">
+                                <rect key="frame" x="0.0" y="190" width="240" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="QY6-UX-APc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="현재점수 분발하쇼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oee-fo-1vV">
+                                <rect key="frame" x="40" y="60" width="160" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="dyP-E2-NsX"/>
+                            <constraint firstAttribute="trailing" secondItem="Y2E-gc-Dbg" secondAttribute="trailing" id="07J-bP-WV9"/>
+                            <constraint firstItem="czZ-G1-kRO" firstAttribute="centerX" secondItem="Lf2-tn-8Hy" secondAttribute="centerX" id="A9Q-bi-frm"/>
+                            <constraint firstItem="czZ-G1-kRO" firstAttribute="top" secondItem="Oee-fo-1vV" secondAttribute="bottom" constant="8" id="CdH-3G-A6B"/>
+                            <constraint firstAttribute="bottom" secondItem="Y2E-gc-Dbg" secondAttribute="bottom" id="iFk-SG-TWw"/>
+                            <constraint firstItem="czZ-G1-kRO" firstAttribute="centerY" secondItem="Lf2-tn-8Hy" secondAttribute="centerY" id="wbs-NJ-cOd"/>
+                            <constraint firstItem="Y2E-gc-Dbg" firstAttribute="leading" secondItem="Lf2-tn-8Hy" secondAttribute="leading" id="xr5-lY-RyF"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="현재점수 분발하쇼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oee-fo-1vV">
-                        <rect key="frame" x="20" y="50" width="160" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czZ-G1-kRO">
-                        <rect key="frame" x="40" y="90" width="160" height="60"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Y2E-gc-Dbg" secondAttribute="trailing" id="UA9-b2-1fK"/>
-                <constraint firstAttribute="bottom" secondItem="Y2E-gc-Dbg" secondAttribute="bottom" id="dlD-Ym-Q0o"/>
-                <constraint firstItem="Y2E-gc-Dbg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="izD-Bn-hLA"/>
+                <constraint firstItem="Lf2-tn-8Hy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="atz-38-uDT"/>
+                <constraint firstAttribute="bottom" secondItem="Lf2-tn-8Hy" secondAttribute="bottom" id="eiR-8c-TsZ"/>
+                <constraint firstItem="Lf2-tn-8Hy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kmO-EF-JWX"/>
+                <constraint firstAttribute="trailing" secondItem="Lf2-tn-8Hy" secondAttribute="trailing" id="o0J-My-gza"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="200" height="207"/>
@@ -55,7 +68,7 @@
                 <outlet property="nameLabel" destination="Y2E-gc-Dbg" id="8k7-t2-hTU"/>
                 <outlet property="statusLabel" destination="Oee-fo-1vV" id="3u4-uo-9zU"/>
             </connections>
-            <point key="canvasLocation" x="34" y="64.5"/>
+            <point key="canvasLocation" x="34" y="64"/>
         </collectionViewCell>
     </objects>
 </document>
